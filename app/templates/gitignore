@@ -1,0 +1,38 @@
+node_modules/
+temp/
+*.swp
+*.pid
+pids
+npm-debug.log
+
+#### Windows Git Ignore ####
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+#### Mac Git Ignore ####
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+##### IntelliJ Git Ignore ####
+*.iml
+*.ipr
+*.iws
+.idea/
+
+#### Eclipse Git Ignore ####
+*.pydevproject
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp

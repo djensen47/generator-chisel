@@ -1,0 +1,17 @@
+{
+  "name": "<%= projectName  %>",
+  "version": "<%= version  %>",
+  "description": "<%= description %>",
+  <% if (privateRepo) { %>
+  "private": true,
+  <% } %>
+  "main": "<%= entryPoint %>",
+  "scripts": {
+    "test": "<%= testScript %>"
+  },
+  "author": "<%= author %>",
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
