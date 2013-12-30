@@ -9,7 +9,7 @@
   "bugs": "https://github.com/djensen47/generator-chisel/issues",
   "author": {
     "name": "Dave Jensen",
-    "email": "",
+    "email": "david@jensen47.com",
     "url": "https://github.com/djensen47"
   },
   "main": "chisel/index.js",
