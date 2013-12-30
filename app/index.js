@@ -12,7 +12,7 @@ var spawn = require('child_process').spawn;
 
 var ChiselGenerator = module.exports = function ChiselGenerator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
-©
+
   this.dependencies = [];
   this.devDependencies = [
     'grunt', 
