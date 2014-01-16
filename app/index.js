@@ -125,6 +125,11 @@ ChiselGenerator.prototype.askFor = function askFor() {
     }
   }, {
     type: 'confirm',
+    name: 'includeConfig',
+    message: 'Include configuration?',
+    default: true
+  }, {
+    type: 'confirm',
     name: 'factories',
     message: 'Include factories in testing?',
     default: true
@@ -136,9 +141,10 @@ ChiselGenerator.prototype.askFor = function askFor() {
     this.version = answers.version;
     this.privateRepo = answers.privateRepo;
     this.entryPoint = answers.entryPoint;
+    this.includeConfig = answers.includeConfig;
     this.factories = answers.factories;
     this.testScript = '';
-    this.projectType = answers.projectTypem
+    this.projectType = answers.projectType;
     if (_s.isBlank(answers.authorName)) {
       this.author = '';
     } else {
@@ -172,7 +178,11 @@ ChiselGenerator.prototype.express = function express() {
 
 ChiselGenerator.prototype.resitfy = function restify() {
   if (this.projectType == 'restify') {
-
+    console.log(chalk.yellow('Generating a restify project.\n'));
+    this.dependencies.push('restify');
+    this.mkdir('lib');
+    this.template('_restify.js', 'lib/server.js');
+    this.template('_restifyroutes.js', 'lib/routes.js');
   }
 };
 
@@ -180,7 +190,15 @@ ChiselGenerator.prototype.library = function library() {
   if (this.projectType === 'library') {
     console.log(chalk.yellow('Generating a library project.\n'));
     this.mkdir('lib');
-    this.write('lib/'+this.entryPoint, '');
+    this.template('_library.js', 'lib/' + this.entryPoint);
+  }
+};
+
+ChiselGenerator.prototype.conf = function conf() {
+  if (this.includeConfig) {
+    this.dependencies.push('config');
+    this.mkdir('config');
+    this.write('config/default.coffee', '');
   }
 };
 
