@@ -202,5 +202,6 @@ ChiselGenerator.prototype.test = function test() {
     this.mkdir('test/factories');
     this.copy('test/factories/example-factory.js', 'test/factories/example-factory.js');
   }
+  this.devDependencies = this.devDependencies.concat(deps);
 
 };
