@@ -17,7 +17,7 @@ server.use(restify.queryParser());
 server.use(restify.gzipResponse());
 server.use(restify.bodyParser());
 
-require('routes')(server);
+require('./routes')(server);
 
 server.listen((process.env.PORT || 8080), function onListen() {
   console.log('listening at %s', server.url); 
