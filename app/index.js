@@ -167,7 +167,7 @@ ChiselGenerator.prototype.projectfiles = function projectfiles() {
   this.copy('gitignore', '.gitignore');
   this.template('_Gruntfile.coffee', 'Gruntfile.coffee');
   this.template('_package.json', 'package.json');
-  this.template('_README.md', 'README.md');
+  this.template('_README.MD', 'README.md');
 };
 
 ChiselGenerator.prototype.express = function express() {
