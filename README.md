@@ -20,7 +20,7 @@ Supported applications include:
 
  - Standalone library
  - Express (TODO)
- - Restify (TODO)
+ - Restify (In progress)
 
 ## Getting Started
 
