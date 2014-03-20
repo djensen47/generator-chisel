@@ -143,7 +143,7 @@ ChiselGenerator.prototype.askFor = function askFor() {
     this.entryPoint = answers.entryPoint;
     this.includeConfig = answers.includeConfig;
     this.factories = answers.factories;
-    this.testScript = '';
+    this.testScript = 'npm test';
     this.projectType = answers.projectType;
     if (_s.isBlank(answers.authorName)) {
       this.author = '';
