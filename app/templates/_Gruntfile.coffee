@@ -44,7 +44,7 @@ module.exports = (grunt) ->
       tasks: ['jshint','mochaTest']
 
     instrument:
-      files: './lib/*.js'
+      files: './lib/**/*.js'
       options:
         basePath : lcovInstrumentDir
 
