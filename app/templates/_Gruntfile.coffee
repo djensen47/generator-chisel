@@ -19,7 +19,7 @@ module.exports = (grunt) ->
     env:
       default:
         LIB_FOR_TESTS_DIR: srcLibForTestsDir
-      mochaTest:
+      test:
         NODE_ENV: 'testing'
       coverage:
         LIB_FOR_TESTS_DIR: lcovLibForTestsDir
@@ -43,7 +43,7 @@ module.exports = (grunt) ->
 
     watch:
       files: ['Gruntfile.coffee', 'test/**/*.js', 'lib/**/*.js']
-      tasks: ['jshint','mochaTest']
+      tasks: ['cover']
 
     instrument:
       files: './lib/**/*.js'
@@ -81,18 +81,19 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks('grunt-istanbul-coverage')
   grunt.loadNpmTasks('grunt-notify')
 
-  grunt.registerTask 'test', ['jshint', 'mochaTest']
-  grunt.registerTask 'default', ['test']
+  grunt.registerTask 'test', ['env:test', 'jshint', 'mochaTest']
 
   grunt.registerTask 'cover', [
     'clean:coverage',
     'env:coverage',
     'instrument',
-    'mochaTest',
+    'test',
     'storeCoverage',
     'makeReport',
     'coverage'
   ]
+
+  grunt.registerTask 'default', ['cover']
 
 #  grunt.registerMultiTask 'coverme', 'istanbul code coverage', () ->
 #    done = this.async()
