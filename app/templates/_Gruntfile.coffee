@@ -19,6 +19,8 @@ module.exports = (grunt) ->
     env:
       default:
         LIB_FOR_TESTS_DIR: srcLibForTestsDir
+      mochaTest:
+        NODE_ENV: 'testing'
       coverage:
         LIB_FOR_TESTS_DIR: lcovLibForTestsDir
 
